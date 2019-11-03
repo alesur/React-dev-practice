@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
-import AuthenticationService from './AuthenticationService.js'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import AuthenticatedRoute from './AuthenticatedRoute'
 import LoginComponent from './LoginComponent'
 import HeaderComponent from './HeaderComponent'
@@ -9,6 +8,7 @@ import FooterComponent from './FooterComponent'
 import WelcomeComponent from './WelcomeComponent'
 import LogoutComponent from './LogoutComponent'
 import ErrorComponent from './ErrorComponent'
+
 class TodoApp extends Component {
     render(){
         return (
@@ -28,9 +28,7 @@ class TodoApp extends Component {
                     <FooterComponent></FooterComponent>
                     </>
                 </Router>
-
-                {/* <LoginComponent></LoginComponent>
-                <WelcomeComponent></WelcomeComponent> */}
+                
             </div>
         )
     }
