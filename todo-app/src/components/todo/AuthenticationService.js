@@ -8,7 +8,7 @@ registerSuccessfullLogin(username,password){
     
     }
 
-    isUsereLoggedIn() {
+    isUserLoggedIn() {
         let user = sessionStorage.getItem('authenticatedUser')
         if(user===null) return false
         return true

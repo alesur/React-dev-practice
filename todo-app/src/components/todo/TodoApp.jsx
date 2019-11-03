@@ -32,19 +32,20 @@ class TodoApp extends Component {
 
 class HeaderComponent extends Component {
     render(){
+        const isUserLoggedIn = AuthenticationService.isUserLoggedIn();
+        console.log(isUserLoggedIn);
         return(
             <div>
                 <header>
-                    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
 <div><a href="/" className="navbar-brand">TodosAPP</a></div>
-<ul class="navbar-nav">
-<li ><Link className="nav-link" to="/welcome/admin">Home</Link></li>
-    <li ><Link className="nav-link" to="/todos">Todos</Link></li>
+<ul className="navbar-nav">
+{isUserLoggedIn && <li ><Link className="nav-link" to="/welcome/admin">Home</Link></li>} 
+{isUserLoggedIn && <li ><Link className="nav-link" to="/todos">Todos</Link></li>}
 </ul>
-<ul class="navbar-nav navbar-collapse justify-content-end">
-<li ><Link className="nav-link" to="/login">Login</Link></li>
-<li ><Link className="nav-link" to="/logout" onClick={AuthenticationService.logout}>Logout</Link></li>
-   
+<ul className="navbar-nav navbar-collapse justify-content-end">
+{!isUserLoggedIn && <li ><Link className="nav-link" to="/login">Login</Link></li>}
+{isUserLoggedIn && <li ><Link className="nav-link" to="/logout" onClick={AuthenticationService.logout}>Logout</Link></li>}   
 </ul>
                     </nav>
                 </header>
@@ -82,8 +83,8 @@ class ListTodosComponent extends Component{
         return (
             <div>
                 <h1>List Todos</h1>
-                <div class="container">
-                <table class="table">
+                <div className="container">
+                <table className="table">
                     <thead>
                         <tr>
                             <th>id</th>
@@ -118,7 +119,7 @@ class WelcomeComponent extends Component{
 
             <>
             <h1>Welcome</h1>
-            <div class="container">
+            <div className="container">
                 Welcome to dashboard {this.props.match.params.name} Manage your todos <Link to="/todos">OPEN</Link>
             </div>
             </>
