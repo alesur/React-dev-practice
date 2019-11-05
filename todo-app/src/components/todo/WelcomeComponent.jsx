@@ -33,14 +33,26 @@ constructor(props){
             
         )
     }
+    // retrieveWelcomeMessage() {
+    //     HelloWorldService.executeHelloWorldService()
+    //     .then(response => this.handleSuccessfullResponse(response))
+    //   //  .catch()
+    // }
+    
     retrieveWelcomeMessage() {
-        HelloWorldService.executeHelloWorldService()
-        .then(response => this.handleSuccessfullResponse(response))
-      //  .catch()
+    //     HelloWorldService.executeHelloWorldBeanService()
+    //     .then(response => this.handleSuccessfullResponse(response))
+    //   //  .catch()
+      HelloWorldService.executeHelloWorldPathVariableService(this.props.match.params.name)
+      .then(response => this.handleSuccessfullResponse(response))
+    //  .catch()
+
     }
+    
 
     handleSuccessfullResponse(response){
-        this.setState({welcomeMessage: response.data})
+        console.log(response)
+        this.setState({welcomeMessage: response.data.message})
         
     }
 }
