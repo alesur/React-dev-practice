@@ -1,4 +1,4 @@
-package io.github.alesur.todoapp.restfullwebservice;
+package io.github.alesur.todoapp.restfullwebservice.helloworld;
 
 public class HelloWorldBean {
     private String message;

@@ -1,4 +1,4 @@
-package io.github.alesur.todoapp.restfullwebservice;
+package io.github.alesur.todoapp.restfullwebservice.helloworld;
 
 
 import org.springframework.web.bind.annotation.CrossOrigin;
