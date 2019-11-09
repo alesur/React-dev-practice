@@ -1,12 +1,12 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 class LogoutComponent extends Component {
     render() {
         return (
             <>
-            <h1>You are logged out</h1>
-            <div className="container">
-                Thank you for using our app
+                <h1>You are logged out</h1>
+                <div className="container">
+                    Thank you for using our app
             </div>
             </>
         )

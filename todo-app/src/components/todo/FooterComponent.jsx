@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 class FooterComponent extends Component {
-    render(){
-        return(
+    render() {
+        return (
             <footer className="footer">
                 <span className="text-muted">Copyright</span>
 
